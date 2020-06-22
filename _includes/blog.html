@@ -1,0 +1,81 @@
+<section class="no-padding" id="blog">
+	<section>
+        <span class="page-title">
+            <h2>最近的文章</h2>
+        </span>
+    </section>
+	<div>
+		<div class="row">	
+			<div class="col-sm-9">
+				<ul class="page-list">
+				  {% for post in paginator.posts %}
+				    <li class="blog-box">
+				    	<div class="blog-top clearfix">
+							<h1 class="blog-tite"> 
+								<a href="{{ post.url }}" title="">{{ post.title }}</a>
+							</h1>
+							<p class="blog-name">By <span>{{site.author}}</span></p>
+							<p class="blog-time">发表于 {{ post.date | date: "%F" }}</p>
+				    	</div>
+				    	<div class="blog-con clearfix">
+				    		<p>{{ post.excerpt }}</p>
+				    		<a href="{{ post.url }}">更多</a>
+				    	</div>
+				    	<div class="blog-foot clearfix">
+				    		<div class="blog-left">
+				    			<span class="i-tag"></span>
+				    			{% for tag in post.tags %}
+				    				<a class="a" href="{{site.baseurl}}/tags/#{{tag}}">{{tag}}</a>
+				    			{% endfor %}
+				    		</div>
+				    		<div class="blog-right">
+				    			<span class="pl"></span>
+				    			<a class="apl ds-thread-count" href="{{ post.url }}" data-thread-key="{{ post.path }}" data-count-type="comments">评论</a>
+				    			<span id = "url::{{ post.url }}" class = "cy_cmt_count" ></span>
+				    		</div>
+				    	</div>
+				    </li>
+				  {% endfor %}
+				</ul>
+				{% if paginator.posts | size > 1 %}
+				  <nav id="page-nav" class="clearfix{% if site.index.expand != true  %} unexpand{% endif %}">
+				    {% if paginator.previous_page %}
+				    <a class="extend prev" rel="prev" href="{{ paginator.previous_page_path }}"><span></span>Prev</a>
+				    {% endif %}
+				    {% if paginator.page == 1 %}
+				    <span class="page-number current">1</span>
+				    {% else %}
+				    <a class="page-number" href="/">1</a>
+				    {% endif %}
+				    {% for i in (2..paginator.total_pages) %}
+				    {%if i == paginator.page %}
+				    <span class="page-number current">{{ i }}</span>
+				    {% else %}
+				    <a class="page-number" href="/page{{ i }}">{{ i }}</a>
+				    {% endif %}
+				    {% endfor %}
+				     {% if paginator.next_page %}
+				    <a class="extend next" rel="next" href="{{ paginator.next_page_path }}">Next<span></span></a>
+				    {% endif %}
+				  </nav>
+				{% endif %}
+			</div>
+			<div class="col-sm-3">
+				<div class="pside">
+					<h3 class="tit">分类</h3>
+					<ul class="list">
+						{% for item in site.categories %}
+							<li><a href="{{site.baseurl}}/categories/#{{item[0]}}">{{item[0]}}<sup>{{ item[1] | size }}</sup></a></li>
+						{% endfor %}
+					</ul>
+					<h3 class="tit">标签</h3>
+					<ul class="tags clearfix">
+						{% for item in site.tags %}
+							<li><a href="{{site.baseurl}}/tags/#{{item[0]}}">{{item[0]}}<sup>{{ item[1] | size }}</sup></a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

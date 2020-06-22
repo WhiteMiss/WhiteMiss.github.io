@@ -1,0 +1,39 @@
+# Site settings
+title: galan小屋
+email: 619531862@qq.com
+description: > # this means to ignore newlines until "baseurl:"
+url: http://galan99.github.io # the base hostname & protocol for your site
+
+twitter_username:
+github_username: galan99
+
+
+
+baseurl:  #http://galan99.github.io
+
+host: 192.168.116.61 #监听网址
+port: 4000 #监听端口
+
+author: galan99
+authorUrl: http://galan99.github.io
+
+permalink: /:categories/:year/:month/:day/:title
+
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"] #过滤这些文件
+
+
+paginate: 10 #分页
+paginate_path: "page:num"#分页设置
+
+widgets:
+- category
+- tag
+- links
+- douban
+- rss
+
+# Build settings
+markdown: kramdown
+
+
+gems: [jekyll-paginate]

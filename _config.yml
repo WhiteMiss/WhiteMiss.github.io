@@ -1,21 +1,19 @@
 # Site settings
-title: galan小屋
-email: 619531862@qq.com
+title: White
+email: 1448335038@qq.com
 description: > # this means to ignore newlines until "baseurl:"
-url: http://galan99.github.io # the base hostname & protocol for your site
+url: https://whitemiss.github.io/ # the base hostname & protocol for your site
 
 twitter_username:
-github_username: galan99
+github_username: WhiteMiss
 
 
 
-baseurl:  #http://galan99.github.io
+baseurl:  #https://whitemiss.github.io/
 
-host: 192.168.116.61 #监听网址
-port: 4000 #监听端口
 
-author: galan99
-authorUrl: http://galan99.github.io
+author: whitemiss
+authorUrl: https://whitemiss.github.io/
 
 permalink: /:categories/:year/:month/:day/:title
 

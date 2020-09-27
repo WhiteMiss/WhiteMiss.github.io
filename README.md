@@ -1,6 +1,6 @@
 # 静态博客
 
-[在线预览](https://galan99.github.io/)
+[在线预览](http://xie-hao.xyz/)
 
 用的jekyll搭建的静态博客
 
@@ -36,7 +36,7 @@
 ## 我的联系方式
 
 <div align=center>
-<img src='https://galan99.github.io/img/me/wx.png' width='300'>
+<img src='https://WhiteMiss.github.io/img/me/wx.png' width='300'>
 </div>
 <br>
 <div align=center>风里雨里我在这儿等你，欢迎勾搭！</div>
